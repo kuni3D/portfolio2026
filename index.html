@@ -128,6 +128,12 @@
             position: relative;
             margin-top: 50px; /* Espacio para el home-btn */
         }
+        .gallery-desc-container {
+            display: none;
+        }
+        .gallery-desc-container.show {
+            display: block;
+        }
         .gallery {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -240,6 +246,8 @@
         <div class="copy-message">¡COPIADO!</div>
     </div>
     <div class="gallery-container">
+        <div class="home-btn"><img src="./imagenes/flecha.png" alt="Flecha"></div>
+        <div class="gallery-desc-container"></div> <!-- Contenedor para las descripciones -->
         <div class="gallery" data-gallery="main">
             <img src="./imagenes/robot construccion.jpg" data-detail-gallery="galeria7" alt="Gallery Image 1">
             <img src="./imagenes/image2.png" data-detail-gallery="galeria2" alt="Image 2">
@@ -252,9 +260,8 @@
             <img src="./imagenes/raze2.png" data-detail-gallery="galeria6" alt="Gallery Image 6">
             <img src="./imagenes/Yumel.png" data-detail-gallery="galeria10" alt="Gallery Image 10">
         </div>
-        <div class="home-btn"><img src="./imagenes/flecha.png" alt="Flecha"></div> <!-- Imagen reemplaza el texto -->
+        <div class="back-btn">Volver</div>
     </div>
-    <div class="back-btn">Volver</div>
     <script src="app.js"></script>
     <p class="signature">Designed by KuniDev</p>
 </body>
