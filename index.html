@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kuni3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile h1 {
+            margin: 10px 0 5px;
+            font-size: 0.95em;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.4em;
+            color: #5E5E5E;
+        }
+        .profile p {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+            color: #8E8E8E;
+        }
+        .signature {
+            margin: 20px 0 0; /* 20px de margen superior */
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+            color: #8E8E8E;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .buttons a {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2a2a2a;
+            color: #8E8E8E;
+            letter-spacing: 0.4em;
+            text-decoration: none;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6em;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .buttons a:hover {
+            transform: scale(0.95);
+            background-color: #3a3a3a;
+        }
+        .buttons .mail {
+            position: relative;
+            padding-left: 30px;
+        }
+        .buttons .mail svg {
+            position: absolute;
+            left: 10px;
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            margin-right: 5px;
+        }
+        .buttons .artstation {
+            position: relative;
+            padding-left: 35px;
+        }
+        .buttons .artstation img {
+            position: absolute;
+            left: 10px;
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+        .buttons .devlog {
+            position: relative;
+            padding-left: 30px;
+        }
+        .buttons .devlog img {
+            position: absolute;
+            left: 10px;
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            margin-right: 5px;
+        }
+        .copy-message {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2a2a2a;
+            color: #00ff00;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .copy-message.show {
+            opacity: 1;
+        }
+        .gallery-container {
+            position: relative;
+            margin-top: 50px; /* Espacio para el home-btn */
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .gallery img, .gallery video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+        }
+        .gallery.detailed {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .back-btn {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2a2a2a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .back-btn.show {
+            display: inline-block;
+        }
+        .back-btn:hover {
+            transform: scale(0.95);
+            background-color: #3a3a3a;
+        }
+        .home-btn {
+            display: none;
+            position: absolute;
+            top: -60px; /* Arriba de la galería, ajustado */
+            left: 10%;
+            transform: translateX(-10%);
+            padding: 2px;
+            background-color: #2a2a2a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 0;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            z-index: 10; /* Asegurar que esté por encima */
+        }
+        .home-btn.show {
+            display: inline-block;
+        }
+        .home-btn img {
+            width: 40px; /* Ajusta el tamaño de la imagen según necesites */
+            height: 40px;
+            margin: 0 auto;
+            display: block;
+        }
+        .home-btn:hover {
+            transform: scale(0.95);
+            background-color: #3a3a3a;
+        }
+        video {
+            background-color: #000;
+        }
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .gallery.detailed {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .copy-message {
+                top: -30px;
+            }
+            .home-btn {
+                top: -30px;
+            }
+            .gallery-container {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile">
+        <img src="./imagenes/perfil01.jpg" alt="Profile Picture">
+        <h1>KUNI3D</h1>
+        <p>a 3D Generalist, passionate about bringing characters and environments to life. B3D, UES, SP, Adobe.</p>
+    </div>
+    <div class="buttons">
+        <a class="mail" data-copy="alanarce3d@gmail.com">MAIL<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 10px;">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+        </svg></a>
+        <a href="https://www.artstation.com/desert3d" class="artstation">ARTSTATION<img src="./imagenes/artstation-logo.png" alt="Artstation Logo"></a>
+        <a href="https://kuni3d.vercel.app/" class="devlog">DEVLOG<img src="./imagenes/joystick.webp" alt="Joystick"></a>
+        <div class="copy-message">¡COPIADO!</div>
+    </div>
+    <div class="gallery-container">
+        <div class="gallery" data-gallery="main">
+            <img src="./imagenes/robot construccion.jpg" data-detail-gallery="galeria7" alt="Gallery Image 1">
+            <img src="./imagenes/image2.png" data-detail-gallery="galeria2" alt="Image 2">
+            <img src="./imagenes/R03.png" data-detail-gallery="galeria3" alt="Image 3">
+            <img src="./imagenes/rubia1.jpg" data-detail-gallery="galeria4" alt="Image 4">
+            <img src="./imagenes/deepchat2.png" data-detail-gallery="galeria5" alt="Image 5">
+            <img src="./imagenes/blueball.jpg" data-detail-gallery="galeria8" alt="Gallery Image 8">
+            <img src="./imagenes/pancake.png" data-detail-gallery="galeria1" alt="Image 7">
+            <img src="./imagenes/gatito.jpg" data-detail-gallery="galeria9" alt="Gallery Image 9">
+            <img src="./imagenes/raze2.png" data-detail-gallery="galeria6" alt="Gallery Image 6">
+            <img src="./imagenes/Yumel.png" data-detail-gallery="galeria10" alt="Gallery Image 10">
+        </div>
+        <div class="home-btn"><img src="./imagenes/flecha.png" alt="Flecha"></div> <!-- Imagen reemplaza el texto -->
+    </div>
+    <div class="back-btn">Volver</div>
+    <script src="app.js"></script>
+    <p class="signature">Designed by KuniDev</p>
+</body>
+</html>
