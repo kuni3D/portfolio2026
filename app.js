@@ -12,10 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
             content: [
                 './imagenes/pancake.png',
                 './videos/pancake1 (1).mp4',
-                './imagenes/nueva2.jpg',
-                './imagenes/nueva3.jpg',
-                './imagenes/nueva4.jpg',
-                './imagenes/nueva5.jpg'
+                './imagenes/pancake2.png',
+
             ],
             desc: {
                 para1: 'Videojuego desarrollado en 3 días para la WomenGameJam2025.',
