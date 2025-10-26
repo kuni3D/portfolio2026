@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        profileDesc: "a 3D Generalist, passionate about bringing characters and environments to life. B3D, UES, SP, Adobe.",
+        profileDesc: "a 3D Generalist, passionate about bringing characters and environments to life. B3D, UE5, SP, Adobe.",
         backBtn: "Back",
         signature: "Designed by KuniDev",
         mail: "MAIL",
@@ -19,7 +19,7 @@ const translations = {
         gallery10: "Just a character I created with whatever came to mind."
     },
     zh: {
-        profileDesc: "一个3D综合艺术家，热衷于赋予角色和环境生命。B3D, UES, SP, Adobe。",
+        profileDesc: "一个3D综合艺术家，热衷于赋予角色和环境生命。B3D, UE5, SP, Adobe。",
         backBtn: "返回",
         signature: "由KuniDev设计",
         mail: "邮件",
@@ -38,7 +38,7 @@ const translations = {
         gallery10: "只是一个凭空想象创建的角色。"
     },
     hi: {
-        profileDesc: "एक 3D सामान्यवादी, जो पात्रों और पर्यावरणों को जीवन देने के लिए उत्साहित है। B3D, UES, SP, Adobe।",
+        profileDesc: "एक 3D सामान्यवादी, जो पात्रों और पर्यावरणों को जीवन देने के लिए उत्साहित है। B3D, UE5, SP, Adobe।",
         backBtn: "वापस",
         signature: "KuniDev द्वारा डिज़ाइन किया गया",
         mail: "मेल",
@@ -57,7 +57,7 @@ const translations = {
         gallery10: "बस एक चरित्र जो मैंने जो मन में आया उससे बनाया।"
     },
     es: {
-        profileDesc: "Generalista 3D, apasionado por dar vida a personajes y ambientes. B3D, UES, SP, Adobe.",
+        profileDesc: "Generalista 3D, apasionado por dar vida a personajes y ambientes. B3D, UE5, SP, Adobe.",
         backBtn: "Volver",
         signature: "Diseñado por KuniDev",
         mail: "MAIL",
@@ -76,7 +76,7 @@ const translations = {
         gallery10: "Solo un personaje que cree con lo que se me ocurría en el momento."
     },
     ar: {
-        profileDesc: "محترف ثلاثي الأبعاد، متحمس لإحياء الشخصيات والبيئات. B3D, UES, SP, Adobe.",
+        profileDesc: "محترف ثلاثي الأبعاد، متحمس لإحياء الشخصيات والبيئات. B3D, UE5, SP, Adobe.",
         backBtn: "رجوع",
         signature: "تم التصميم بواسطة KuniDev",
         mail: "بريد",
