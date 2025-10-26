@@ -8,17 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryDescContainer = document.querySelector('.gallery-desc-container');
     const langBtn = document.querySelector('.lang-btn');
     const langMenu = document.querySelector('.lang-menu');
+    const modal = document.querySelector('.modal');
+    const modalContent = document.querySelector('.modal-content');
+    const closeModal = document.querySelector('.close-modal');
 
-    if (!mailButton || !gallery || !backBtn || !homeBtn || !galleryDescContainer || !langBtn || !langMenu) {
+    if (!mailButton || !gallery || !backBtn || !homeBtn || !galleryDescContainer || !langBtn || !langMenu || !modal || !modalContent || !closeModal) {
         console.error('Algunos elementos no se encontraron en el DOM:', {
-            mailButton, gallery, backBtn, homeBtn, galleryDescContainer, langBtn, langMenu
+            mailButton, gallery, backBtn, homeBtn, galleryDescContainer, langBtn, langMenu, modal, modalContent, closeModal
         });
         return;
     }
 
     // Establecer idioma inicial y estado de la galería
     let currentLang = 'es';
-    let currentGalleryId = null; // Para rastrear la galería detallada actual
+    let currentGalleryId = null;
     let detailedGalleries = {
         galeria1: {
             content: [
@@ -45,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 './videos/Render Fight 1.mp4',
                 './videos/0001-0165.mp4',
                 './videos/Render Fight 2.mp4',
-                './videos/habitacion1.mp4'
+                './videos/habitacion1.mp4',
+                './imagenes/BLENDER1.png'
             ],
             desc: translations[currentLang].gallery3
         },
@@ -129,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
         devlogBtn.firstChild.textContent = translations[lang].devlog;
         copyMessage.textContent = translations[lang].copied;
 
-        // Actualizar descripciones de galerías
         detailedGalleries = Object.fromEntries(
             Object.entries(detailedGalleries).map(([key, value]) => {
                 const translation = translations[lang][`gallery${key.slice(-1)}`];
@@ -150,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         );
 
-        // Recargar la galería detallada actual si existe
         if (currentGalleryId) {
             loadDetailedGallery(currentGalleryId);
         }
@@ -174,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para cargar galería específica
     function loadDetailedGallery(galleryId) {
-        currentGalleryId = galleryId; // Actualizar el ID de la galería actual
+        currentGalleryId = galleryId;
         const galleryData = detailedGalleries[galleryId];
         if (galleryData) {
             gallery.classList.add('detailed');
@@ -209,6 +211,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const newImg = document.createElement('img');
                     newImg.src = src;
                     newImg.alt = `Image from ${galleryId}`;
+                    newImg.addEventListener('click', () => {
+                        modalContent.src = src;
+                        modal.style.display = 'block';
+                    });
                     gallery.appendChild(newImg);
                 }
             });
@@ -220,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para restaurar galería principal
     function restoreMainGallery() {
-        currentGalleryId = null; // Resetear el ID de la galería al volver a la principal
+        currentGalleryId = null;
         gallery.classList.remove('detailed');
         gallery.innerHTML = '';
         galleryDescContainer.innerHTML = '';
@@ -228,11 +234,11 @@ document.addEventListener('DOMContentLoaded', () => {
         mainGallery.forEach(img => gallery.appendChild(img.cloneNode(true)));
         backBtn.classList.remove('show');
         homeBtn.classList.remove('show');
+        modal.style.display = 'none';
     }
 
     // Handle gallery image click
     gallery.addEventListener('click', (e) => {
-        console.log('Gallery click event triggered');
         const img = e.target.closest('img');
         if (img && img.dataset.detailGallery) {
             const galleryId = img.dataset.detailGallery;
@@ -242,19 +248,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle back button click
     backBtn.addEventListener('click', () => {
-        console.log('Back button click event triggered');
         restoreMainGallery();
     });
 
     // Handle home button click
     homeBtn.addEventListener('click', () => {
-        console.log('Home button click event triggered');
         restoreMainGallery();
     });
 
     // Language menu functionality
     langBtn.addEventListener('click', (e) => {
-        console.log('Language button click event triggered');
         e.preventDefault();
         langMenu.classList.toggle('show');
     });
@@ -262,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Change language on menu item click
     langMenu.querySelectorAll('div').forEach(item => {
         item.addEventListener('click', (e) => {
-            console.log('Language menu item click event triggered');
             e.preventDefault();
             const lang = item.getAttribute('data-lang');
             updateLanguage(lang);
@@ -275,4 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!mainGallery.length) {
         console.error('No images found in main gallery');
     }
+
+    // Cerrar modal
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Cerrar modal al hacer clic fuera
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });

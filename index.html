@@ -158,7 +158,7 @@
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #2a2a2a;
-            opacity: 0%
+            opacity: 100%; /* Corregido a 100% para que sea visible */
             color: #fff;
             text-decoration: none;
             border-radius: 20px;
@@ -181,7 +181,7 @@
             left: 20px;
             transform: translateX(-10%);
             padding: 2px;
-            background-color: transparent; /* Sin color */
+            background-color: transparent;
             text-decoration: none;
             border-radius: 50%;
             width: 40px;
@@ -251,6 +251,34 @@
         video {
             background-color: #000;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .close-modal:hover {
+            color: #ccc;
+        }
         @media (max-width: 600px) {
             .gallery {
                 grid-template-columns: repeat(3, 1fr);
@@ -261,12 +289,14 @@
             .buttons {
                 flex-direction: column;
                 gap: 5px;
+                justify-content: center;
+                align-items: center;
             }
             .copy-message {
                 top: -30px;
             }
             .home-btn {
-                top: -30px;
+                top: 10px;
             }
             .gallery-container {
                 margin-top: 40px;
@@ -321,6 +351,10 @@
         <div data-lang="hi">हिन्दी</div>
         <div data-lang="es">Español</div>
         <div data-lang="ar">العربية</div>
+    </div>
+    <div class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" src="" alt="Ampliado">
     </div>
     <script src="traducciones.js"></script>
     <script src="app.js"></script>
