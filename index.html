@@ -43,7 +43,7 @@
             color: #8E8E8E;
         }
         .signature {
-            margin: 20px 0 0; /* 20px de margen superior */
+            margin: 20px 0 0;
             font-family: 'Inter', sans-serif;
             font-size: 0.9em;
             color: #8E8E8E;
@@ -126,7 +126,7 @@
         }
         .gallery-container {
             position: relative;
-            margin-top: 50px; /* Espacio para el home-btn */
+            margin-top: 50px;
         }
         .gallery-desc-container {
             display: none;
@@ -176,7 +176,7 @@
         .home-btn {
             display: none;
             position: absolute;
-            top: -60px; /* Arriba de la galería, ajustado */
+            top: -60px;
             left: 10%;
             transform: translateX(-10%);
             padding: 2px;
@@ -189,13 +189,13 @@
             font-size: 0;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
-            z-index: 10; /* Asegurar que esté por encima */
+            z-index: 10;
         }
         .home-btn.show {
             display: inline-block;
         }
         .home-btn img {
-            width: 40px; /* Ajusta el tamaño de la imagen según necesites */
+            width: 40px;
             height: 40px;
             margin: 0 auto;
             display: block;
@@ -203,6 +203,50 @@
         .home-btn:hover {
             transform: scale(0.95);
             background-color: #3a3a3a;
+        }
+        .lang-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #2a2a2a;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lang-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .lang-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .lang-menu.show {
+            display: block;
+        }
+        .lang-menu div {
+            padding: 5px 15px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+            color: #8E8E8E;
+        }
+        .lang-menu div:hover {
+            background-color: #3a3a3a;
+            border-radius: 5px;
         }
         video {
             background-color: #000;
@@ -227,6 +271,14 @@
             .gallery-container {
                 margin-top: 40px;
             }
+            .lang-btn {
+                top: 10px;
+                right: 10px;
+            }
+            .lang-menu {
+                top: 60px;
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -234,7 +286,7 @@
     <div class="profile">
         <img src="./imagenes/perfil01.jpg" alt="Profile Picture">
         <h1>KUNI3D</h1>
-        <p>a 3D Generalist, passionate about bringing characters and environments to life. B3D, UES, SP, Adobe.</p>
+        <p class="profile-desc">a 3D Generalist, passionate about bringing characters and environments to life. B3D, UES, SP, Adobe.</p>
     </div>
     <div class="buttons">
         <a class="mail" data-copy="alanarce3d@gmail.com">MAIL<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 10px;">
@@ -247,7 +299,7 @@
     </div>
     <div class="gallery-container">
         <div class="home-btn"><img src="./imagenes/flecha.png" alt="Flecha"></div>
-        <div class="gallery-desc-container"></div> <!-- Contenedor para las descripciones -->
+        <div class="gallery-desc-container"></div>
         <div class="gallery" data-gallery="main">
             <img src="./imagenes/robot construccion.jpg" data-detail-gallery="galeria7" alt="Gallery Image 1">
             <img src="./imagenes/image2.png" data-detail-gallery="galeria2" alt="Image 2">
@@ -262,6 +314,15 @@
         </div>
         <div class="back-btn">Volver</div>
     </div>
+    <div class="lang-btn"><img src="./imagenes/idiomas1.png" alt="Language Selector"></div>
+    <div class="lang-menu">
+        <div data-lang="en">English</div>
+        <div data-lang="zh">普通话</div>
+        <div data-lang="hi">हिन्दी</div>
+        <div data-lang="es">Español</div>
+        <div data-lang="ar">العربية</div>
+    </div>
+    <script src="traducciones.js"></script>
     <script src="app.js"></script>
     <p class="signature">Designed by KuniDev</p>
 </body>
