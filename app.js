@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
         galeria5: {
             content: [
                 './imagenes/deepchat2.png',
+                './imagenes/deepchat3.png',
+                './imagenes/deepchat4.png',
             ],
             desc: translations[currentLang].gallery5
         },
