@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === GALERÍAS DETALLADAS ===
     let detailedGalleries = {
-        galeria1: { content: ['./imagenes/pancake.png', './videos/pancake1 (1).mp4', './imagenes/pancake2.png'], desc: '' },
-        galeria2: { content: ['./imagenes/image2.png', './imagenes/image.png'], desc: '' },
+        galeria1: { content: ['./imagenes/pancake.png', './videos/pancake1 (1).mp4', './imagenes/pancake2.png', './imagenes/pancake3.png', './imagenes/pancake4.png', './imagenes/pancake5.png'], desc: '' },
+        galeria2: { content: ['./imagenes/image2.png', './imagenes/image.png', './imagenes/image3.png'], desc: '' },
         galeria3: { content: ['./imagenes/R03.png', './imagenes/R04.png', './videos/Render Fight 1.mp4', './videos/0001-0165.mp4', './videos/Render Fight 2.mp4', './videos/habitacion1.mp4', './imagenes/BLENDER1.png'], desc: '' },
         galeria4: { content: ['./imagenes/rubia1.jpg', './imagenes/rubia2.jpg'], desc: '' },
         galeria5: { content: ['./imagenes/deepchat2.png', './imagenes/deepchat3.png', './imagenes/deepchat4.png'], desc: '' },

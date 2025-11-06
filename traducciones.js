@@ -13,7 +13,7 @@ const translations = {
             credits: "Some props were made by Zoe Muruchi, Michiel Lamorte and Juanaiv.",
             play: "Play it: https://kuni3d.itch.io/pancakes-bunny"
         },
-        gallery2: "Fan Art of Yunara.",
+        gallery2: "Fan Art of Yunara. (WIP)",
         gallery3: "A chibi fighter, inspired by a concept.",
         gallery4: "A cybergirl inspired by various concepts.",
         gallery5: "A stylized cyborg inspired by DeepChat, a YouTube video character.",
@@ -37,7 +37,7 @@ const translations = {
             credits: "部分道具由Zoe Muruchi、Michiel Lamorte和Juanaiv制作。",
             play: "玩它：https://kuni3d.itch.io/pancakes-bunny"
         },
-        gallery2: "Yunara的粉丝艺术。",
+        gallery2: "Yunara的粉丝艺术。 工作进行中",
         gallery3: "一个受概念启发的奇比战士。",
         gallery4: "一个受多种概念启发的赛博女孩。",
         gallery5: "一个受YouTube视频角色DeepChat启发的风格化赛博人。",
@@ -85,7 +85,7 @@ const translations = {
             credits: "Algunos props fueron hechos por Zoe Muruchi, Michiel Lamorte y Juanaiv.",
             play: "Juegalo: https://kuni3d.itch.io/pancakes-bunny"
         },
-        gallery2: "Fan Art de Yunara.",
+        gallery2: "Fan Art de Yunara. (WIP)",
         gallery3: "Un luchador chibi, inspirado en un concept.",
         gallery4: "Una cybergirl inspirada de varios concepts.",
         gallery5: "Un cyborg styilized inspirado en DeepChat un personaje de un video de Youtube.",
