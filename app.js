@@ -19,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Establecer idioma inicial y estado de la galería
+    // Establecer idioma inicial
     let currentLang = 'es';
     let currentGalleryId = null;
+
+    // Inicializamos detailedGalleries con contenido, pero desc vacío (se llenará en updateLanguage)
     let detailedGalleries = {
         galeria1: {
             content: [
@@ -29,17 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 './videos/pancake1 (1).mp4',
                 './imagenes/pancake2.png',
             ],
-            desc: {
-                para1: translations[currentLang].gallery1.para1,
-                para2: translations[currentLang].gallery1.para2
-            }
+            desc: ''
         },
         galeria2: {
             content: [
                 './imagenes/image2.png',
                 './imagenes/image.png',
             ],
-            desc: translations[currentLang].gallery2
+            desc: ''
         },
         galeria3: {
             content: [
@@ -51,14 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 './videos/habitacion1.mp4',
                 './imagenes/BLENDER1.png'
             ],
-            desc: translations[currentLang].gallery3
+            desc: ''
         },
         galeria4: {
             content: [
                 './imagenes/rubia1.jpg',
                 './imagenes/rubia2.jpg',
             ],
-            desc: translations[currentLang].gallery4
+            desc: ''
         },
         galeria5: {
             content: [
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 './imagenes/deepchat3.png',
                 './imagenes/deepchat4.png',
             ],
-            desc: translations[currentLang].gallery5
+            desc: ''
         },
         galeria6: {
             content: [
@@ -76,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 './videos/raze3.mp4',
                 './videos/raze4.mp4'
             ],
-            desc: translations[currentLang].gallery6
+            desc: ''
         },
         galeria7: {
             content: [
@@ -84,13 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 './videos/Chasm Call pwnisher challenge.mp4',
                 './imagenes/robot construccion2.jpg',
             ],
-            desc: translations[currentLang].gallery7
+            desc: ''
         },
         galeria8: {
             content: [
                 './imagenes/blueball.jpg',
             ],
-            desc: translations[currentLang].gallery8
+            desc: ''
         },
         galeria9: {
             content: [
@@ -98,20 +97,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 './imagenes/gatito2.jpg',
                 './imagenes/gatito3.jpg',
             ],
-            desc: translations[currentLang].gallery9
+            desc: ''
         },
         galeria10: {
             content: [
                 './imagenes/Yumel.png',
             ],
-            desc: translations[currentLang].gallery10
+            desc: ''
         }
     };
 
-    // Función para actualizar el idioma
+    // Función para actualizar el idioma y las descripciones
     function updateLanguage(lang) {
         currentLang = lang;
         document.documentElement.lang = lang;
+
         const profileDesc = document.querySelector('.profile-desc');
         const backBtnText = document.querySelector('.back-btn');
         const signature = document.querySelector('.signature');
@@ -135,32 +135,33 @@ document.addEventListener('DOMContentLoaded', () => {
         devlogBtn.firstChild.textContent = translations[lang].devlog;
         copyMessage.textContent = translations[lang].copied;
 
+        // ACTUALIZAR DESCRIPCIONES DE GALERÍAS
         detailedGalleries = Object.fromEntries(
             Object.entries(detailedGalleries).map(([key, value]) => {
-                const translation = translations[lang][`gallery${key.slice(-1)}`];
+                const galleryNum = key.replace('galeria', ''); // "1", "2", ..., "10"
+                const translation = translations[lang][`gallery${galleryNum}`] || '';
+
                 if (translation && typeof translation === 'object' && translation.para1 && translation.para2) {
                     return [key, {
                         content: value.content,
-                        desc: {
-                            para1: translation.para1,
-                            para2: translation.para2
-                        }
+                        desc: { para1: translation.para1, para2: translation.para2 }
                     }];
                 } else {
                     return [key, {
                         content: value.content,
-                        desc: translation || ''
+                        desc: translation
                     }];
                 }
             })
         );
 
+        // Recargar galería si ya está abierta
         if (currentGalleryId) {
             loadDetailedGallery(currentGalleryId);
         }
     }
 
-    // Inicializar idioma
+    // Inicializar idioma (esto asigna las descripciones correctas)
     updateLanguage(currentLang);
 
     // Copy email functionality
@@ -169,9 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (email) {
             navigator.clipboard.writeText(email).then(() => {
                 copyMessage.classList.add('show');
-                setTimeout(() => {
-                    copyMessage.classList.remove('show');
-                }, 2000);
+                setTimeout(() => copyMessage.classList.remove('show'), 2000);
             }).catch(err => console.error('Error copying to clipboard:', err));
         }
     });
@@ -186,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryDescContainer.innerHTML = '';
             galleryDescContainer.classList.add('show');
 
+            // Mostrar descripción principal
             if (typeof galleryData.desc === 'object' && galleryData.desc.para1 && galleryData.desc.para2) {
                 const para1 = document.createElement('p');
                 para1.textContent = galleryData.desc.para1;
@@ -202,6 +202,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 galleryDescContainer.appendChild(para);
             }
 
+            // === SOLO PARA GALERÍA 1: AGREGAR CRÉDITOS Y ENLACE DEBAJO DE LA GALERÍA ===
+            if (galleryId === 'galeria1') {
+                const translation = translations[currentLang].gallery1;
+                const creditsContainer = document.querySelector('.gallery-credits-container');
+
+                if (creditsContainer) {
+                    creditsContainer.innerHTML = '';
+
+                    // Créditos
+                    const credits = document.createElement('p');
+                    credits.textContent = translation.credits;
+                    creditsContainer.appendChild(credits);
+
+                    // Enlace
+                    const playLink = document.createElement('a');
+                    playLink.href = translation.play.split(': ')[1].trim();
+                    playLink.textContent = translation.play;
+                    playLink.target = '_blank';
+                    playLink.rel = 'noopener';
+                    creditsContainer.appendChild(playLink);
+
+                    creditsContainer.classList.add('show');
+                }
+            } else {
+                const creditsContainer = document.querySelector('.gallery-credits-container');
+                if (creditsContainer) {
+                    creditsContainer.classList.remove('show');
+                    creditsContainer.innerHTML = '';
+                }
+            }
+
+            // Cargar contenido
             galleryData.content.forEach(src => {
                 if (src.endsWith('.mp4')) {
                     const video = document.createElement('video');
@@ -226,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Función para restaurar galería principal
+    // Restaurar galería principal
     function restoreMainGallery() {
         currentGalleryId = null;
         gallery.classList.remove('detailed');
@@ -237,9 +269,14 @@ document.addEventListener('DOMContentLoaded', () => {
         backBtn.classList.remove('show');
         homeBtn.classList.remove('show');
         modal.style.display = 'none';
+        const creditsContainer = document.querySelector('.gallery-credits-container');
+if (creditsContainer) {
+    creditsContainer.classList.remove('show');
+    creditsContainer.innerHTML = '';
+}
     }
 
-    // Handle gallery image click
+    // Eventos de galería
     gallery.addEventListener('click', (e) => {
         const img = e.target.closest('img');
         if (img && img.dataset.detailGallery) {
@@ -248,23 +285,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle back button click
-    backBtn.addEventListener('click', () => {
-        restoreMainGallery();
-    });
+    backBtn.addEventListener('click', restoreMainGallery);
+    homeBtn.addEventListener('click', restoreMainGallery);
 
-    // Handle home button click
-    homeBtn.addEventListener('click', () => {
-        restoreMainGallery();
-    });
-
-    // Language menu functionality
+    // Menú de idiomas
     langBtn.addEventListener('click', (e) => {
         e.preventDefault();
         langMenu.classList.toggle('show');
     });
 
-    // Change language on menu item click
     langMenu.querySelectorAll('div').forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
@@ -274,18 +303,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Almacenar la galería principal inicial
+    // Almacenar galería principal
     const mainGallery = Array.from(document.querySelectorAll('.gallery[data-gallery="main"] img'));
     if (!mainGallery.length) {
         console.error('No images found in main gallery');
     }
 
-    // Cerrar modal
+    // Modal: cerrar
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
     });
 
-    // Cerrar modal al hacer clic fuera
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.style.display = 'none';

@@ -52,7 +52,7 @@
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 20px;
+             margin-bottom: 20px;
             position: relative;
         }
         .buttons a {
@@ -158,7 +158,7 @@
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #2a2a2a;
-            opacity: 100%; /* Corregido a 100% para que sea visible */
+            opacity: 100%;
             color: #fff;
             text-decoration: none;
             border-radius: 20px;
@@ -279,6 +279,32 @@
         .close-modal:hover {
             color: #ccc;
         }
+
+        /* ESTILOS DE CRÉDITOS: FUERA DEL @media → APLICAN EN TODAS LAS PANTALLAS */
+        .gallery-credits-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+        .gallery-credits-container.show {
+            display: block;
+        }
+        .gallery-credits-container p {
+            font-size: 0.8em;
+            color: #6E6E6E;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        .gallery-credits-container a {
+            font-size: 0.9em;
+            color: #00aaff;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+            word-break: break-all;
+        }
+
         @media (max-width: 600px) {
             .gallery {
                 grid-template-columns: repeat(3, 1fr);
@@ -342,6 +368,7 @@
             <img src="./imagenes/raze2.png" data-detail-gallery="galeria6" alt="Gallery Image 6">
             <img src="./imagenes/Yumel.png" data-detail-gallery="galeria10" alt="Gallery Image 10">
         </div>
+        <div class="gallery-credits-container"></div>
         <div class="back-btn">Volver</div>
     </div>
     <div class="lang-btn"><img src="./imagenes/idiomas1.png" alt="Language Selector"></div>
@@ -353,7 +380,7 @@
         <div data-lang="ar">العربية</div>
     </div>
     <div class="modal">
-        <span class="close-modal">&times;</span>
+        <span class="close-modal">×</span>
         <img class="modal-content" src="" alt="Ampliado">
     </div>
     <script src="traducciones.js"></script>

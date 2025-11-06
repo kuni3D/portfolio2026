@@ -7,7 +7,12 @@ const translations = {
         artstation: "ARTSTATION",
         devlog: "DEVLOG",
         copied: "COPIED!",
-        gallery1: { para1: "Video game developed in 3 days for WomenGameJam2025.", para2: "I led a team of 3 women to complete the game as quickly as possible. I wrote code, modeled, rigged, and animated." },
+        gallery1: {
+            para1: "Video game developed in 3 days for WomenGameJam2025.",
+            para2: "I led a team of 3 women to complete the game as quickly as possible. I wrote code, modeled, rigged, and animated.",
+            credits: "Some props were made by Zoe Muruchi, Michiel Lamorte and Juanaiv.",
+            play: "Play it: https://kuni3d.itch.io/pancakes-bunny"
+        },
         gallery2: "Fan Art of Yunara.",
         gallery3: "A chibi fighter, inspired by a concept.",
         gallery4: "A cybergirl inspired by various concepts.",
@@ -26,7 +31,12 @@ const translations = {
         artstation: "艺术站",
         devlog: "开发日志",
         copied: "已复制！",
-        gallery1: { para1: "为WomenGameJam2025三天内开发的视频游戏。", para2: "我带领一个由3名女性组成的团队，尽快完成游戏。我编写代码、建模、绑定和动画。" },
+        gallery1: {
+            para1: "为WomenGameJam2025三天内开发的视频游戏。",
+            para2: "我带领一个由3名女性组成的团队，尽快完成游戏。我编写代码、建模、绑定和动画。",
+            credits: "部分道具由Zoe Muruchi、Michiel Lamorte和Juanaiv制作。",
+            play: "玩它：https://kuni3d.itch.io/pancakes-bunny"
+        },
         gallery2: "Yunara的粉丝艺术。",
         gallery3: "一个受概念启发的奇比战士。",
         gallery4: "一个受多种概念启发的赛博女孩。",
@@ -45,7 +55,12 @@ const translations = {
         artstation: "आर्टस्टेशन",
         devlog: "डेवलॉग",
         copied: "कॉपी हो गया!",
-        gallery1: { para1: "WomenGameJam2025 के लिए 3 दिनों में विकसित वीडियो गेम।", para2: "मैंने 3 महिलाओं की एक टीम का नेतृत्व किया ताकि खेल को जितनी जल्दी हो सके पूरा किया जा सके। मैंने कोड लिखा, मॉडलिंग की, रिगिंग की और एनिमेटेड किया।" },
+        gallery1: {
+            para1: "WomenGameJam2025 के लिए 3 दिनों में विकसित वीडियो गेम।",
+            para2: "मैंने 3 महिलाओं की एक टीम का नेतृत्व किया ताकि खेल को जितनी जल्दी हो सके पूरा किया जा सके। मैंने कोड लिखा, मॉडलिंग की, रिगिंग की और एनिमेटेड किया।",
+            credits: "कुछ प्रॉप्स Zoe Muruchi, Michiel Lamorte और Juanaiv द्वारा बनाए गए थे।",
+            play: "खेलें: https://kuni3d.itch.io/pancakes-bunny"
+        },
         gallery2: "Yunara का प्रशंसक कला।",
         gallery3: "एक चिबी योद्धा, एक अवधारणा से प्रेरित।",
         gallery4: "विभिन्न अवधारणाओं से प्रेरित एक साइबरगर्ल।",
@@ -64,7 +79,12 @@ const translations = {
         artstation: "ARTSTATION",
         devlog: "DEVLOG",
         copied: "¡COPIADO!",
-        gallery1: { para1: "Videojuego desarrollado en 3 días para la WomenGameJam2025.", para2: "Lideré un equipo con 3 mujeres para que juntos completemos el juego lo más rápido posible. Escribí código, modelé, rigguié y animé." },
+        gallery1: {
+            para1: "Videojuego desarrollado en 3 días para la WomenGameJam2025.",
+            para2: "Lideré un equipo con 3 mujeres para que juntos completemos el juego lo más rápido posible. Escribí código, modelé, rigguié y animé.",
+            credits: "Algunos props fueron hechos por Zoe Muruchi, Michiel Lamorte y Juanaiv.",
+            play: "Juegalo: https://kuni3d.itch.io/pancakes-bunny"
+        },
         gallery2: "Fan Art de Yunara.",
         gallery3: "Un luchador chibi, inspirado en un concept.",
         gallery4: "Una cybergirl inspirada de varios concepts.",
@@ -83,7 +103,13 @@ const translations = {
         artstation: "محطة الفن",
         devlog: "سجل التطوير",
         copied: "تم النسخ!",
-        gallery1: { para1: "لعبة فيديو طورت في 3 أيام لمسابقة WomenGameJam2025.", para2: "قادة فريق مكون من 3 نساء لإكمال اللعبة بأسرع وقت ممكن. كتبت الكود، نمذجت، ربطت، وأنمت." },
+        ar: {
+        gallery1: {
+            para1: "لعبة فيديو طورت في 3 أيام لمسابقة WomenGameJam2025.",
+            para2: "قادة فريق مكون من 3 نساء لإكمال اللعبة بأسرع وقت ممكن. كتبت الكود، نمذجت، ربطت، وأنمت.",
+            credits: "بعض العناصر صنعت بواسطة Zoe Muruchi، Michiel Lamorte و Juanaiv.",
+            play: "العبها: https://kuni3d.itch.io/pancakes-bunny"
+        },
         gallery2: "فن المعجبين لـ Yunara.",
         gallery3: "محارب شيبي، مستوحى من مفهوم.",
         gallery4: "فتاة سايبر مستوحاة من مفاهيم مختلفة.",
@@ -93,5 +119,6 @@ const translations = {
         gallery8: "مشروع صغير طورت عندما بدأت مع الـ 3D.",
         gallery9: "قطة لطيفة للعبة موبايل.",
         gallery10: "فقط شخصية خلقتها بما كان يخطر ببالي في اللحظة."
+    },
     }
 };
