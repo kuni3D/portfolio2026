@@ -2,8 +2,8 @@ const translations = {
     en: {
         profileDesc: "a 3D Generalist, passionate about bringing characters and environments to life. B3D, UE5, SP, Adobe.",
         backBtn: "Back",
-        signature: "Designed by KuniDev",
-        mail: "MAIL",
+        signature: "Web Design by KuniDev",
+        mail: "E-MAIL",
         artstation: "ARTSTATION",
         devlog: "DEVLOG",
         copied: "COPIED!",
@@ -20,7 +20,7 @@ const translations = {
         gallery6: "Raze chibi, inspired by Valorant stickers.",
         gallery7: "A rusty robot for the Pwnisher 'Chasm Call' challenge.",
         gallery8: "A small project I developed when starting with 3D.",
-        gallery9: "An adorable kitten for a mobile game.",
+        gallery9: "An adorable kitten for a mobile game. [Comission]",
         gallery10: "Just a character I created with whatever came to mind."
     },
     zh: {
@@ -74,8 +74,8 @@ const translations = {
     es: {
         profileDesc: "Generalista 3D, apasionado por dar vida a personajes y ambientes. B3D, UE5, SP, Adobe.",
         backBtn: "Volver",
-        signature: "Diseñado por KuniDev",
-        mail: "MAIL",
+        signature: "Diseño Web por KuniDev",
+        mail: "E-MAIL",
         artstation: "ARTSTATION",
         devlog: "DEVLOG",
         copied: "¡COPIADO!",
@@ -92,7 +92,7 @@ const translations = {
         gallery6: "Raze chibi, inspirada de los stickers de Valorant.",
         gallery7: "Un robot rusty para el desafío de Pwnisher 'Chasm Call'.",
         gallery8: "Un pequeño proyecto que desarrollé cuando empezaba con el 3D. Elaborado en ZBrush y renderizado en Keyshot.",
-        gallery9: "Un gatito adorable para un videojuego de celular.",
+        gallery9: "Un gatito adorable para un videojuego de celular. [Comisión]",
         gallery10: "Solo un personaje que cree con lo que se me ocurría en el momento."
     },
     ar: {
