@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         galeria10: { content: ['./imagenes/Yumel.png'], desc: '' },
         galeria11: { content: ['./imagenes/venom1.png', './imagenes/venom2.png', './imagenes/venom3.png', './imagenes/venom4.jpg', './imagenes/venom5.jpg', './imagenes/venom6.jpg'], desc: '' },
         galeria12: { content: ['./imagenes/nave0.png', './imagenes/nave1.png', './imagenes/nave2.png'], desc: '' },
-        galeria13: { content: ['./imagenes/lunarshotsz1.png', './imagenes/lunarshotsz2.png', './imagenes/lunarshotsz3.jpg'], desc: '' },
+        galeria13: { content: ['./imagenes/LunarShotsZ1.png', './imagenes/LunarShotsZ2.png', './imagenes/LunarShotsZ3.jpg'], desc: '' },
         galeria14: { content: ['./imagenes/portador1.png', './imagenes/portador2.png', './imagenes/portador3.png'], desc: '' },
         galeria15: { content: ['./imagenes/goosefootball1.png', './imagenes/goosefootball2.jpg', './imagenes/goosefootball3.jpg'], desc: '' }
     };
