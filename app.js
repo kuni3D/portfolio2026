@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         galeria3: { content: ['./imagenes/R03.png', './imagenes/R04.png', './videos/Render Fight 1.mp4', './videos/0001-0165.mp4', './videos/Render Fight 2.mp4', './videos/habitacion1.mp4', './imagenes/BLENDER1.png'], desc: '' },
         galeria4: { content: ['./imagenes/rubia1.jpg', './imagenes/rubia2.jpg'], desc: '' },
         galeria5: { content: ['./imagenes/deepchat2.png', './imagenes/deepchat3.png', './imagenes/deepchat4.png'], desc: '' },
-        galeria6: { content: ['./imagenes/raze2.png', './videos/raze1.mp4', './videos/raze2.mp4', './videos/raze3.mp4', './videos/raze4.mp4'], desc: '' },
+        galeria6: { content: ['./imagenes/raze2.png', './videos/raze1.mp4', './videos/raze2.mp4', './videos/raze3.mp4', './videos/raze4.mp4', './imagenes/raze7.jpg', './imagenes/raze8.jpg', './imagenes/raze9.jpg', './imagenes/raze10.jpg'], desc: '' },
         galeria7: { content: ['./imagenes/robot construccion.jpg', './videos/Chasm Call pwnisher challenge.mp4', './imagenes/robot construccion2.jpg'], desc: '' },
         galeria8: { content: ['./imagenes/blueball.jpg'], desc: '' },
         galeria9: { content: ['./imagenes/gatito.jpg', './imagenes/gatito2.jpg', './imagenes/gatito3.jpg'], desc: '' },
