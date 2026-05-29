@@ -2,7 +2,7 @@ const translations = {
     en: {
         profileDesc: "a 3D Generalist, passionate about bringing characters and environments to life. B3D, UE5, SP, Adobe.",
         backBtn: "Back",
-        signature: "Web Design by KuniDev",
+        signature: "Last Update: 05 MAY 26 - Web Design by KuniDev",
         mail: "E-MAIL",
         artstation: "ARTSTATION",
         devlog: "DEVLOG",
@@ -74,12 +74,12 @@ const translations = {
     es: {
         profileDesc: "Generalista 3D, apasionado por dar vida a personajes y ambientes. B3D, UE5, SP, Adobe.",
         backBtn: "Volver",
-        signature: "Diseño Web por KuniDev",
+        signature: "Ultima Actualizacion: 26 MAY 26 - Diseño Web por KuniDev",
         mail: "E-MAIL",
         artstation: "ARTSTATION",
         devlog: "DEVLOG",
         copied: "¡COPIADO!",
-        gallery1: {
+        galeria1: {
             para1: "Videojuego desarrollado en 3 días para la WomenGameJam2025.",
             para2: "Lideré un equipo con 3 mujeres para que juntos completemos el juego lo más rápido posible. Escribí código, modelé, rigguié y animé.",
             credits: "Algunos props fueron hechos por Zoe Muruchi, Michiel Lamorte y Juanaiv.",
@@ -93,7 +93,25 @@ const translations = {
         gallery7: "Un robot rusty para el desafío de Pwnisher 'Chasm Call'.",
         gallery8: "Un pequeño proyecto que desarrollé cuando empezaba con el 3D. Elaborado en ZBrush y renderizado en Keyshot.",
         gallery9: "Un gatito adorable para un videojuego de celular. [Comisión]",
-        gallery10: "Solo un personaje que cree con lo que se me ocurría en el momento."
+        gallery10: "Solo un personaje que cree con lo que se me ocurría en el momento.",
+        galeria13: {
+            para1: "Videojuego desarrollado en Abril para la VibeJam2026.",
+            para2: "Como SoloDev pensando en un Tower Defense y fluyendo en inspiración.",
+            credits: "Aliens.",
+            play: "Juegalo: https://lunarshots.vercel.app/"
+        },
+        galeria14: {
+            para1: "Videojuego -El Portador- desarrollado para la GlobalGameJam2026 - Buenos Aires.",
+            para2: "Coordinando un team con 2 personas.",
+            credits: "Máscaras.",
+            play: "Juegalo: https://kuni3d.itch.io/the-carrier"
+        },
+        galeria15: {
+            para1: "Goose Football 2025",
+            para2: "Ganzos que juegan futbol, mi primer videojuego vibecoding en javascript.",
+            credits: "Ganzitos.",
+            play: "Jugar: https://kuni3d.github.io/goosefootball/"
+}
     },
     ar: {
         profileDesc: "محترف ثلاثي الأبعاد، متحمس لإحياء الشخصيات والبيئات. B3D, UE5, SP, Adobe.",

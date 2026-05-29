@@ -34,7 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         galeria7: { content: ['./imagenes/robot construccion.jpg', './videos/Chasm Call pwnisher challenge.mp4', './imagenes/robot construccion2.jpg'], desc: '' },
         galeria8: { content: ['./imagenes/blueball.jpg'], desc: '' },
         galeria9: { content: ['./imagenes/gatito.jpg', './imagenes/gatito2.jpg', './imagenes/gatito3.jpg'], desc: '' },
-        galeria10: { content: ['./imagenes/Yumel.png'], desc: '' }
+        galeria10: { content: ['./imagenes/Yumel.png'], desc: '' },
+        galeria11: { content: ['./imagenes/venom1.png', './imagenes/venom2.png', './imagenes/venom3.png', './imagenes/venom4.jpg', './imagenes/venom5.jpg', './imagenes/venom6.jpg'], desc: '' },
+        galeria12: { content: ['./imagenes/nave0.png', './imagenes/nave1.png', './imagenes/nave2.png'], desc: '' },
+        galeria13: { content: ['./imagenes/lunarshotsz1.png', './imagenes/lunarshotsz2.png', './imagenes/lunarshotsz3.jpg'], desc: '' },
+        galeria14: { content: ['./imagenes/portador1.png', './imagenes/portador2.png', './imagenes/portador3.png'], desc: '' },
+        galeria15: { content: ['./imagenes/goosefootball1.png', './imagenes/goosefootball2.jpg', './imagenes/goosefootball3.jpg'], desc: '' }
     };
 
     // === ESTILO DE TEXTO UNIFICADO (LTR + RTL safe) ===
@@ -64,11 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
         devlogBtn.firstChild.textContent = translations[lang].devlog;
         copyMsg.textContent = translations[lang].copied;
 
-        // Actualizar descripciones
+        // === Actualizar descripciones (Corregido para mapear con 'gallery' o 'galeria') ===
         detailedGalleries = Object.fromEntries(
             Object.entries(detailedGalleries).map(([key, value]) => {
                 const num = key.replace('galeria', '');
-                const t = translations[lang][`gallery${num}`] || '';
+
+                // Intenta buscar 'gallery15' o 'galeria15' en el archivo de traducciones
+                const t = translations[lang][`gallery${num}`] || translations[lang][`galeria${num}`] || '';
+
                 return [key, {
                     content: value.content,
                     desc: (t && typeof t === 'object' && t.para1 && t.para2) ? { para1: t.para1, para2: t.para2 } : t
@@ -120,8 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // === CRÉDITOS Y ENLACE (solo galeria1) ===
-        if (galleryId === 'galeria1') {
-            const t = translations[currentLang].gallery1;
+        if (galleryId === 'galeria1' || 'galeria13' || galleryId === 'galeria15') {
+            const t = translations[currentLang][galleryId];
             if (t?.credits && t?.play) {
                 creditsContainer.innerHTML = '';
 
